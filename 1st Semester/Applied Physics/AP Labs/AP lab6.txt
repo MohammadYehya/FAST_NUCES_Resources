@@ -1,0 +1,40 @@
+In this lab we have learnt how to update velocity using a constant acceleration. This allows us to create simple simulation of projectile motion. Here are the two simple programs that we ran in the lab and can help you solve the problems in Lab6_submission. 
+
+You can copy and paste the following program to run and understand the simulation termination condition. 
+
+
+==========================================================
+GlowScript 3.1 VPython
+
+from vpython import *
+
+scene = canvas(title='Projectile motion', background=vector(1,1,1))
+
+xaxis=curve(pos=[vector(-5,0,0),vector(5,0,0)], color=color.red)
+yaxis=curve(pos=[vector(0,-5,0),vector(0,5,0)], color=color.green)
+zaxis=curve(pos=[vector(0,0,-5),vector(0,0,5)], color=color.blue)
+
+ball=sphere(pos=vector(0,5,0), radius=0.6, color=vector.random(), make_trail=True)
+ground=box(pos=vector(0,-0.1,0), size=vector(15,0.2,5))
+
+# initial parameter
+vmag, vang = 15, 27
+v=vector(vmag*cos(radians(vang)),vmag*sin(radians(vang)),0)
+a=vector(0,-9.8,0)
+
+t=0
+dt=0.01
+
+# iterative motion
+while ball.pos.y-ball.radius>0: 
+  rate(30)
+  # updating parameters for ball
+  ball.pos=ball.pos+v*dt
+  v = v + a*dt
+
+  t=t+dt
+  print(ball.pos)
+
+
+print("end of projectile at horizontal distance = ",ball.pos.x," m")
+==========================================================
