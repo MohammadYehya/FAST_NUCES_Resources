@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+class LoneClass
+{
+	private:
+		string loneObjName;
+		int loneObjID;
+	public:
+		friend void friendOfLoneClass(LoneClass l);
+		LoneClass(){}
+		LoneClass(string s , int x){loneObjName = s ; loneObjID = x;}
+};
+int main()
+{
+	LoneClass l("Mohammad Yehya" , 3309);
+	friendOfLoneClass(l);
+}
+void friendOfLoneClass(LoneClass l)
+{
+	cout << "I am friend of this Lone Class with ObjName = " << l.loneObjName << " and ObjID = " << l.loneObjID << endl;
+}

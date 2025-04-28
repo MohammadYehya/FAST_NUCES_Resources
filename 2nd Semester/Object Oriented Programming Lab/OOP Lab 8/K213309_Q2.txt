@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class Person
+{
+	private:
+		string name;
+		string occupation;
+	public:
+		Person(){}
+		Person(string _occupation){occupation = _occupation;}
+		Draw() {cout << "A person can draw in many ways" << endl;}
+};
+class Artist : public Person
+{
+	public:
+		Artist():Person("Artist"){}
+		Draw() {cout << "An artist can draw with a paint brush" << endl;}
+};
+class Gunman : public Person
+{
+	public:
+		Gunman():Person("Gunman"){}
+		Draw() {cout << "A gunman draws a gun to shoot" << endl;}
+};
+int main()
+{
+	Artist a;
+	Gunman g;
+	a.Person::Draw();
+	a.Draw();
+	g.Draw();
+}
+

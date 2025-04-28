@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+class ShapeDetails
+{
+	private:
+		 float Area;
+		 float Perimeter;
+	public:
+		friend class Square;
+		friend class Circle;
+		void display()
+		{
+			cout << "Area= " << Area << endl;
+			cout << "Perimeter= " << Perimeter << endl;
+		}
+};
+class Square
+{
+	private:
+		float Side_length;
+	public:
+		void Calculate_Perimeter(ShapeDetails &d){d.Perimeter = 4*Side_length;}
+		void Calculate_Area(ShapeDetails &d){d.Area = Side_length*Side_length;}
+		Square(){}
+		Square(float s){Side_length = s;}
+};
+class Circle
+{
+	private:
+		float Radius_length;
+	public:
+		void Calculate_Perimeter(ShapeDetails &d){d.Perimeter = Radius_length*2*3.142;}
+		void Calculate_Area(ShapeDetails &d){d.Area = Radius_length*Radius_length*3.142;}
+		Circle(){}
+		Circle(float l){Radius_length = l;}
+};
+int main()
+{
+	ShapeDetails d1, d2;
+	Square s(5);
+	Circle c(10);
+	s.Calculate_Area(d1);
+	s.Calculate_Perimeter(d1);
+	c.Calculate_Area(d2);
+	c.Calculate_Perimeter(d2);
+	d1.display();
+	d2.display();
+}
+
