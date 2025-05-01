@@ -1,0 +1,5 @@
+----IPC.c----
+In this code, we were given the code for synchronization between process (parent and child). This is done by using named semaphores.
+
+----Share-var.c----
+This is a normal example of a binary semaphore in use. A global variable is being used in two different threads, meaning a critical section exists. Therefore we need to synchronize their usage. A binary semaphore is used and its implementation is similar to the use of a mutex lock.
