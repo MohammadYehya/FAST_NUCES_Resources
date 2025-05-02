@@ -1,0 +1,56 @@
+--K213309 Lab#03 Home Tasks
+
+--Task 11 ~ Modify the Job_id to be of Integer Type and make it the primary key.
+ALTER TABLE Jobs MODIFY Job_id INT PRIMARY KEY;
+
+--Task 12 ~ Write a SQL statement to add Employee_id column in jobs table as foreign key referencing to the primary key Employee_id of Employees table.
+ALTER TABLE Jobs ADD Employee_id INT;
+ALTER TABLE Jobs ADD FOREIGN KEY (Employee_id) REFERENCES Employees (Employee_id);
+
+--Task 13 ~ Insert 3 rows of data into jobs table.
+INSERT INTO Jobs VALUES(101, 'President', 20080, 40000, 1);
+INSERT INTO Jobs VALUES(121, 'Administration Vice President', 15000, 30000, 2);
+INSERT INTO Jobs VALUES(150, 'Administration Assistant', 3000, 6000, 3);
+
+--Task 14 ~ Drop column speciality from Departments.
+ALTER TABLE Departments DROP COLUMN Speciality;
+
+--Task 15 ~ Truncate the jobs table.
+TRUNCATE TABLE Jobs;
+
+--Task 16 ~ Insert 4 new rows into jobs table.
+INSERT INTO Jobs VALUES(196, 'Finance Manager', 8200, 16000, 1);
+INSERT INTO Jobs VALUES(143, 'Accountant', 4200, 9000, 2);
+INSERT INTO Jobs VALUES(178, 'Accounting Manager', 8200, 16000, 3);
+INSERT INTO Jobs VALUES(199, 'Public Accountant', 4200, 9000, 4);
+
+--Task 17 ~ ALTER table EMPLOYEE and apply the constraint CHECK on Full_Name attribute such that it should always be capitalized.
+ALTER TABLE Employees ADD CHECK(UPPER(FULL_NAME) = FULL_NAME);
+
+--Task 18 ~ Change table Employee and make sure that Phone_No should be unique, and never empty.
+ALTER TABLE Employees MODIFY Phone_No NOT NULL UNIQUE;
+
+--Task 19 ~ Write a SQL statement to insert one row into the table Employees.
+INSERT INTO Employees VALUES(6,'PQR', 50000, 2, 2010, 2020, 'Y', '161718');
+
+--Task 20 ~ Write a SQL statement to increase the salary of an employee by 200% if the existing salary is less than 1000.
+UPDATE Employees SET Salary = Salary * 3 WHERE SALARY < 1000;
+
+--Task 21 ~ Change column name Phone_No to Phone_Number, and change jobs table to be job_details, make sure to change foreign keys where referenced.
+ALTER TABLE Employees RENAME COLUMN Phone_no TO Phone_Number;
+ALTER TABLE Jobs RENAME TO Job_Details;
+
+--Task 22 ~ Write a SQL statement to add a primary key for a combination of columns employee_id and job_id in employees table, give the reason why this command is showing error.
+ALTER TABLE Employees ADD PRIMARY KEY(employee_id, job_id);
+        --This is giving an error because first of all there is no column named job_id in employees table
+        --Secondly you can not have 2 primary keys in one table
+
+--Task 23 ~ Delete a row from jobs_details table where starting year is below 1990(add a record first if not existent).
+DELETE FROM Job_Details WHERE employee_id IN (SELECT employee_id FROM Employees WHERE start_date < 1990);
+
+--Task 24 ~ Drop the job_details table.
+DROP TABLE Job_Details;
+--Task 25 ~ Write a SQL statement to add an index named indx_employee_id on employee_id column in the table employees,
+--indx_department_id on department_id column in the table departments.
+CREATE UNIQUE INDEX indx_employee_id ON Employees (employee_id);
+CREATE UNIQUE INDEX indx_department_id ON Departments (Department_id);
