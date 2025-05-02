@@ -1,0 +1,29 @@
+1. What is the advantage of using Hadoop for big data processing?
+Hadoop provides a scalable and fault-tolerant platform for processing large amounts of data across multiple servers in a cluster, enabling faster and more efficient data processing.
+
+2.How does Hadoop handle data backup and recovery?
+Hadoop provides backup and recovery mechanisms such as checkpointing, journaling, and backup nodes to ensure data availability and recoverability in case of failures.
+
+3.How does HDFS ensure data reliability?
+HDFS replicates data across multiple servers in the cluster, typically three times, to ensure that data is not lost in case of server failures.
+
+4.What role does the NameNode play in HDFS, and why is it a potential single point of failure?
+The NameNode is the master server in HDFS responsible for metadata and namespace information. It is a potential single point of failure, and its high availability is crucial for the system's reliability.
+
+5.How does HDFS handle data consistency in a distributed environment?
+HDFS follows a write-once, read-many model, where data is written once and remains immutable. This simplifies data consistency in a distributed environment.
+
+6.What is the significance of the block-based storage model in HDFS?
+HDFS stores data in fixed-size blocks, typically 128MB or 256MB in size. This approach facilitates efficient data processing, minimizes data movement, and enhances fault tolerance.
+
+7.How does the BackupNode stay synchronized with the active NameNode?
+The BackupNode synchronizes with the active NameNode by periodically fetching the namespace changes (edits) and applying them to its own namespace copy.
+
+8.In the event of a NameNode failure, how does the BackupNode take over as the active NameNode?
+When the primary NameNode fails, the BackupNode can transition to the active state by promoting itself and assuming the responsibilities of the primary NameNode.
+
+9.What role does the CheckpointNode play in the HDFS architecture?
+he CheckpointNode is responsible for creating periodic checkpoints of the namespace in HDFS. It offloads the checkpointing workload from the primary NameNode.
+
+10.How does the CheckpointNode prevent overloading the primary NameNode during checkpointing?
+The CheckpointNode periodically creates a checkpoint of the namespace, which involves reading the filesystem metadata, thus reducing the load on the primary NameNode.
