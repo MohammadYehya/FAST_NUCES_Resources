@@ -1,0 +1,17 @@
+Create a sequence diagram:
+
+
+
+
+Let's assume changing the channel of your television using a remote
+control. The TV viewer starts the entire process. The use of the remote which
+will then interact with the TV. Let's assume the TV is already on and the TV
+viewer wants to change her channel. The first thing that happens is the TV
+viewer presses the numbers on the remote to tell it which channel to go to. The
+remote then sends a new message to the television to change the channel to number
+and TV will display the desired channel. If TV viewer is unsure what channel to
+go to and would like to surf the channels until they find a channel they like
+The TV viewer is going to press the up or down arrow on the remote to browse
+through the channels. This sends a message to the remote. The remote will then
+send a message to the TV with this action. Just like in the initial sequence,
+the TV changes the channel and displays that to the TV viewer.

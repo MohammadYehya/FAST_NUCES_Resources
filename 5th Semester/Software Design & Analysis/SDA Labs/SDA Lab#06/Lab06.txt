@@ -1,0 +1,9 @@
+Bank Automated Teller Machine (ATM)
+Initially, the ATM is turned off. After the power supply is turned on, the ATM starts performing the startup
+action and enters into the Self Test state. If the test fails, the ATM will enter into the Out Of Service state,
+or it will undergo a tigerless transition to the Idle state. This is the state where the customer waits for
+the interaction.
+Whenever the customer inserts the bank or credit card in the ATM's card reader, the ATM state changes
+from Idle to Serving Customer, the entry action readCard is performed after entering into Serving
+Customer state. Since the customer can cancel the transaction at any instant, so the transition from Serving
+Customer state back to the Idle state could be triggered by cancel event.

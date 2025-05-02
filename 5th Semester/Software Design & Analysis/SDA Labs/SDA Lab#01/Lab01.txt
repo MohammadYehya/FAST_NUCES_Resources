@@ -1,0 +1,15 @@
+Sentinel License Development Kit (Sentinel LDK) is a Software Digital Rights Management
+(DRM) solution by SafeNet Inc. that delivers strong copy protection, protection for Intellectual
+Property (IP), and secure and flexible licensing. Sentinel LDK separates licensing and
+production processes (implemented with Sentinel EMS) from the software protection process
+(implemented with Sentinel Licensing API or Sentinel LDK Envelope).
+Sentinel EMS is a web-based graphical application provided as part of Sentinel LDK. Product
+manager has role to define the features and product, product can be fully defined or trail project.
+This application is a role-based application designed to manage the business activities like,
+generate the trial product bundles, runtime installer and branded RUS, In addition to this,
+Sentinel EMS manager manage the product, produce entitlements and customer. Each manager
+has to authorized by generate specific key to perform the task. Customer services are being
+provided to manage the customer and product activation.
+
+1. Create a use case diagram on papyrus software
+2. Take a screenshot and upload it on google classroom

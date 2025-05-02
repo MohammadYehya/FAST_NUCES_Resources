@@ -1,0 +1,19 @@
+The different classes that we
+have modeled for the Courseware Management System, such as CourseAdministrator,
+Course, Topic, CourseCalendar, and Student that fall in the Model layer need to
+provide a consistent interface to enable other classes and components to
+interact with them and utilize their services. We can as well define our own
+set of simple interface methods to access these services. But, to enable our
+application components to be used by external applications, we can consider basing
+the components on well-defined component standards. Hence, based on the
+technology that you use, you would model these as, maybe Enterprise JavaBeans
+(EJBs) or Component Object Model/Distributed Component Object Model (COM/DCOM)
+components. EJB and COM/DCOM are nothing but industry-standard component models
+that you can base your application component design on. This becomes the
+"physical" implementation of the logical class diagram. An added
+advantage of basing your application components on these component models is
+that your components become "reusable!" So, if we had introduced a
+controller class for the application named CMSController, it would interact
+with the components in the Model layer via the EJB or the COM/DCOM interfaces.
+There would be database as well as view separately.  Based on this, let us now draw the components
+in the Model layer for the Courseware Management System.

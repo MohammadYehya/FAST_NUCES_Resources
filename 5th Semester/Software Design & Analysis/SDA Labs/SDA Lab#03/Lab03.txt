@@ -1,0 +1,29 @@
+You also need to draw an activity diagram for
+the ATM system.
+
+
+The
+case study is given below
+
+
+Initially, the customer
+arrived at an ATM booth and inserted the card into the machine. The ATM machine
+verifies the validity of the card first. If the card is valid, it proceeds;
+otherwise, it ejects the card. Until the card validation has been performed,
+the customer will need to wait for a while (30 sec). Once the validation is
+completed, the machine asks for the PIN code. At this stage, the customer can
+also cancel the action without entering the PIN code (result
+ATM card will be ejected). The validity of the PIN code is checked. The
+customer needs to wait for some time (30 sec) until the PIN code validation has
+been performed. If the customer enters an invalid pin code, then the ATM
+machine will eject the card, and the transaction has been terminated. If the
+customer inputs a valid pin code, then the ATM machine displays various
+transaction options. The customer can select only one transaction from the
+available options. The customer can use the cancel option to reverse the action
+(result ATM card will be ejected). Once a specific
+transaction has been selected for processing, it is carried out until it is
+completed. A receipt or invoice is generated in parallel with the transaction,
+and the customer's bank account is updated as well. The ATM machine repeatedly
+displays the available transaction options unless the customer explicitly
+cancels the action. Once the transaction has been completed, the ATM machine
+ejects the ATM card.

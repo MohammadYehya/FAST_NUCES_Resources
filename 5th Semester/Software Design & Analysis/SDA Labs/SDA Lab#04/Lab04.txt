@@ -1,0 +1,9 @@
+Draw a UML Class Diagram representing the following elements from the problem domain for a hockey
+league.
+A hockey league is made up of at least four hockey teams. Each hockey team is composed of six
+to twelve players, and one player captains the team. A team has a name and a record. Players have a
+number and a position. Hockey teams play games against each other. Each game has a score and a
+location. Teams are sometimes lead by a coach. A coach has a level of accreditation and a number of
+years of experience, and can coach multiple teams. Coaches and players are people, and people have
+names and addresses. Draw a class diagram for this information, and be sure to label all associations
+with appropriate multiplicities.
