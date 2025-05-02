@@ -1,0 +1,26 @@
+--Task 1 ~ For each department, retrieve the department no, the number of employees in the department and their average salary.
+SELECT DEPARTMENT_ID, COUNT(DEPARTMENT_ID), AVG(SALARY) FROM EMPLOYEES GROUP BY DEPARTMENT_ID ORDER BY DEPARTMENT_ID;
+
+--Task 2 ~ For each department that has more than five employees, retrieve the department number and the number of its employees who are making more than $15,000.
+SELECT DEPARTMENT_ID, COUNT(DEPARTMENT_ID) FROM EMPLOYEES WHERE SALARY > 15000 GROUP BY DEPARTMENT_ID HAVING COUNT(DEPARTMENT_ID) > 5;
+
+--Task 3 ~ Write a Query to display the number of employees with the same job.
+SELECT JOB_ID, COUNT(JOB_ID) FROM EMPLOYEES GROUP BY JOB_ID;
+
+--Task 4 ~ Display the manager number and the salary of the lowest paid employee of that manager. 
+--Exclude anyone whose manager is not known. 
+--Exclude any groups where the minimum salary is 2000. 
+--Sort the output is descending order of the salary.
+SELECT MANAGER_ID, MIN(SALARY) FROM EMPLOYEES WHERE MANAGER_ID IS NOT NULL GROUP BY MANAGER_ID HAVING MIN(SALARY) != 2000 ORDER BY MIN(SALARY) DESC;
+
+--Task 5 ~ Write a Query to select Firstname and Hiredate of Employees Hired right after the joining of employee_ID no 110.
+SELECT FIRST_NAME, HIRE_DATE FROM EMPLOYEES WHERE HIRE_DATE > (SELECT HIRE_DATE FROM EMPLOYEES WHERE EMPLOYEE_ID = 110);
+
+--Task 6 ~ Write a SQL query to select those departments where maximum salary is at least 15000.
+SELECT DEPARTMENT_ID FROM EMPLOYEES GROUP BY DEPARTMENT_ID HAVING MAX(SALARY) > 15000;
+
+--Task 7 ~ Write a query to display the employee number, name (first name and last name) and job title for all employees whose salary is smaller than any salary of those employees whose job title is IT_PROG.
+SELECT EMPLOYEE_ID, FIRST_NAME || LAST_NAME AS "NAME", JOB_ID FROM EMPLOYEES WHERE SALARY < ANY(SELECT SALARY FROM EMPLOYEES WHERE JOB_ID = 'IT_PROG');
+
+--Task 8 ~ Update salary of employees by 20% increment having minimum salary of 6000.
+UPDATE EMPLOYEES SET SALARY = SALARY*1.2 WHERE SALARY > 6000;

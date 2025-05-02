@@ -1,0 +1,47 @@
+--DB LAB #2 - K213309
+--Class Tasks:
+--Task 1 ~ Create Alias.
+SELECT HIRE_DATE AS "Joining Date", first_name From employees;
+
+--Task 2 ~ Calculate Average Salary of Each Department
+SELECT AVG(SALARY) FROM employees GROUP BY DEPARTMENT_ID;
+
+--Task 3 ~ All employees whose commission_pct is not null.
+SELECT * FROM employees WHERE commission_pct is not null;
+
+
+
+--Manual Tasks:
+--Task 1 ~ Display any two columns from employees table.
+SELECT employee_id, first_name 
+FROM employees;
+
+--Task 2 ~ Display Hire_date from employees table, name it as Joining Date.
+SELECT HIRE_DATE AS "Joining Date", first_name From employees;
+
+--Task 3 ~ Display the first_name, last_name of Employees together in one column named "FULL NAME".
+SELECT first_name || ' ' || last_name AS "FULL NAME" FROM employees;
+
+--Task 4 ~ List all Employees having annual salary greater 20, 000 and lesser than 30,000.
+SELECT * FROM employees WHERE SALARY > 20000 AND SALARY < 30000;
+
+--Task 5 ~ List employee_id and first_name of employees from department # 60 to department #100.
+SELECT employee_id, first_name FROM employees WHERE DEPARTMENT_ID BETWEEN 60 AND 100;
+
+--Task 6 ~ List all the Employees having an 'll' in their first_names.
+SELECT * FROM employees WHERE first_name LIKE '%ll%';
+
+--Task 7 ~ List all the employees with no commission.
+SELECT * FROM employees WHERE commission_pct is null;
+
+--Task 8 ~ Print an employee name (first letter capital) and job title (lower Case).
+SELECT INITCAP(first_name),LOWER(job_id) FROM employees;
+
+--Task 9 ~ For all employees employed for more than 100 months, display the employee number, hire date, number of months employed, first Friday after hire date and last day of the month hired.
+SELECT employee_id,hire_date,FLOOR(ABS(MONTHS_BETWEEN(HIRE_DATE,SYSDATE))),NEXT_DAY(HIRE_DATE,'friday'),LAST_DAY(HIRE_DATE) FROM employees WHERE ABS(MONTHS_BETWEEN( HIRE_DATE,SYSDATE )) > 100;
+
+--Task 10 ~ Comparing the hire dates for all employees who started in 2003, display the employee number, hire date, and month started using the conversion and date functions.
+SELECT employee_id, hire_date, TO_CHAR(HIRE_DATE, 'Month') FROM employees WHERE TO_CHAR(HIRE_DATE,'YYYY') = 2003;
+
+--Task 11 ~ To display the employee number, the month number and year of hiring.
+SELECT employee_id, TO_CHAR(HIRE_DATE, 'MM'), TO_CHAR(HIRE_DATE, 'YYYY') FROM employees;
