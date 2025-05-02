@@ -1,0 +1,10 @@
+            	N elements	1000		3000		5000		10000		100000		200000		300000
+# of Threads
+	1			0.000005	0.000012	0.000018	0.000026	0.000215	0.000484	0.000896
+	2			0.000076	0.000145	0.000168	0.000184	0.000201	0.000315	0.000416
+	3			0.000109	0.000151	0.000172	0.000132	0.000190	0.000264	0.000350
+	4			0.000165	0.000165	0.000174	0.000133	0.000219	0.000241	0.000302
+	
+	
+It can be seen that for N < 10000 the overhead in creating the threads is higher therefore more time and cpu cycles are taken.
+However for N > 10000 it can be seen that the time taken decreases as we increase the number of threads.
