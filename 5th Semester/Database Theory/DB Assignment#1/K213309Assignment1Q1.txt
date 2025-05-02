@@ -1,0 +1,15 @@
+K213309 DB Assignment#1 Q1
+●Databases handle all of the complicated implications of using a file system.
+ Like storing things in a file and worrying about how they are stored.
+ Or improved lookups which is difficult in files.
+ Or even Independent scaling which means that databases can be sized up or down  independently to your application.
+ It wouldn't make sense to use a Database when the advantages of using a Database  aren't needed as using a Database involves cost and overhead to purchase and  maintain it.
+
+●A DBA is responsible for designing the logical and physical schemas, as well as  widely used portions of the external schema. They are also responsible for  security and authorisation.
+ A DBA needs to understand query optimization even if they are not interested in  runnung their own because some of the responsibilities are related to query  optimization.
+
+●DDL is important in representing information because it is used to describe  external and logical schemas.
+ DML is used to access and update data.
+ Buffer Manager is not very important for representing data because its job is to  bring arbitrary disk pages into main memory.
+ The data model is fundamental to representing data. The model determines what  representation mechanisms are supported by the DBMS.
+ 
