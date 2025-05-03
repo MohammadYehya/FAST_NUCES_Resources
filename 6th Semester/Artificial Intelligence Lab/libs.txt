@@ -1,0 +1,1 @@
+!pip install numpy python-constraint pomegranate==v0.14.9 hmmlearn scikit-learn pgmpy jupyter numpy pandas matplotlib seaborn gym
